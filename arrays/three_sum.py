@@ -1,3 +1,4 @@
+import sys
 
 
 def three_sum(nums):
@@ -32,7 +33,43 @@ def three_sum(nums):
     return list_to_return
 
 
+def three_sum_closest(nums, target):
+    if len(nums) == 3:
+        return sum(nums)
+
+    nums.sort()
+
+    closest_sum = sys.maxsize
+
+    i = 0
+    while i < len(nums) - 2:
+        low = i + 1
+        high = len(nums) - 1
+
+        while low < high:
+            curr_sum = nums[i] + nums[low] + nums[high]
+
+            if abs(target- curr_sum) < abs(target - closest_sum):
+                closest_sum = curr_sum
+
+            if curr_sum == target:
+                return curr_sum
+            elif curr_sum < target:
+                low += 1
+            else:
+                high -= 1
+
+        i += 1
+
+    return closest_sum
+
+
 if __name__ == "__main__":
     nums = [-2, 0, 0, 2, 2]
-    nums1 = three_sum(nums)
-    print(nums1)
+    # nums1 = three_sum(nums)
+
+    nums_for_closest = [-1,2,1,-4]
+    target = 1
+
+    number = three_sum_closest(nums_for_closest, target)
+    print(number)
