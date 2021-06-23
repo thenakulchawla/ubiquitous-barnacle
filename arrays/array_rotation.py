@@ -107,11 +107,23 @@ def maximize_arr_sum_by_rotation(arr):
     return maxVal
 
 
+def search_range(nums, number):
+    index = binary_search(nums, 0, len(nums)-1, number)
 
+    start = index
+    end = index
+    while start >= 0 and nums[start] == number:
+        start -= 1
+
+    while end <len(nums) and nums[end] == number:
+        end += 1
+
+    return [start +1, end-1]
 
 
 if __name__ == "__main__":
     li = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     li1 = [5, 6, 7, 2, 3, 4]
     li2 = [2, 1]
-    print(right_using_reverse(li, 3, 10))
+    li3 = [8,8,8,8]
+    print(search_range(li3, 8))
