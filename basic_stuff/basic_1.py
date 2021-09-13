@@ -80,7 +80,19 @@ def sq_root(n):
     return math.sqrt(n)
 
 
+def sort_string(s):
+    k = ''.join(sorted(s))
+    print(k)
+
+
+def test_str():
+
+    s = "nakul"
+    s = s[:-1]
+    print(s)
+
+
 if __name__ == "__main__":
-    bitwise_n(10)
+    test_str()
 
 

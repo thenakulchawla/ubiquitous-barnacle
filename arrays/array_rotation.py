@@ -25,7 +25,7 @@ def find_pivot(arr, low, high):
     if high == low:
         return low
 
-    mid = int((high - low)/2 + low)
+    mid = (high + low) // 2
 
     if mid < high and arr[mid] > arr[mid+1]:
         return mid
@@ -40,7 +40,7 @@ def binary_search(arr, low, high, number):
     if high < low:
         return -1
 
-    mid = int((high - low)/2 + low)
+    mid = (high + low) // 2
     if arr[mid] == number:
         return mid
     if arr[mid] < number:

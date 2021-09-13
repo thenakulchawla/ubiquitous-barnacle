@@ -29,6 +29,6 @@ def insertion_sort(input_list):
 
 if __name__=="__main__":
     listToBeSorted = [2, 5, 8, 7, 6, 9, 0, 12, 10, 15, 11]
-    # sortedList = qsort(listToBeSorted)
-    sorted_list = insertion_sort(listToBeSorted)
+    sorted_list = qsort(listToBeSorted)
+    # sorted_list = insertion_sort(listToBeSorted)
     print(sorted_list)
