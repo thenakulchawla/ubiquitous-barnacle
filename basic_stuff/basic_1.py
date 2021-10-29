@@ -92,7 +92,13 @@ def test_str():
     print(s)
 
 
+def set_str():
+    s = 'nakullukan'
+    k = set(list(s))
+    print(list(k))
+
+
 if __name__ == "__main__":
-    test_str()
+    set_str()
 
 
