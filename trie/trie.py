@@ -16,7 +16,7 @@ class Trie:
     def get_node(self):
         return TrieNode()
 
-    def _char_to_index(self, ch):
+    def __char_to_index(self, ch):
         return ord(ch) - ord('a')
 
     def insert(self, key):
@@ -24,7 +24,7 @@ class Trie:
         length = len(key)
 
         for level in range(length):
-            index = self._char_to_index(key[level])
+            index = self.__char_to_index(key[level])
 
             if not p_crawl.children[index]:
                 p_crawl.children[index] = self.get_node()
@@ -33,12 +33,13 @@ class Trie:
 
         p_crawl.end = True
 
+
     def search(self, key) -> bool:
         p_crawl = self.root
         length = len(key)
 
         for level in range(length):
-            index = self._char_to_index(key[level])
+            index = self.__char_to_index(key[level])
             if not p_crawl.children[index]:
                 return False
             p_crawl = p_crawl.children[index]
